@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Wpgtk by deviantfero</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Wpgtk</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/deviantfero/wpgtk">View the Project on GitHub <small>deviantfero/wpgtk</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/deviantfero/wpgtk/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/deviantfero/wpgtk/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/deviantfero/wpgtk">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="wpg" class="anchor" href="#wpg" aria-hidden="true"><span class="octicon octicon-link"></span></a>wpg</h1>
+
+<p>wpg is a little programm to manage your wallpapers in a simple way, it integrates a script wich takes the colors in the image of your preference and sets up an .Xresources file to match your term colors with your wallpaper</p>
+
+<p>it can take a little while to generate the color pallete though, be warned</p>
+
+<ul>
+<li>Simple wallpaper management
+<img src="http://imgur.com/HXIm9v4" alt="window">
+</li>
+</ul>
+
+<h3>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version</h3>
+
+<p>1.0.1</p>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>wpg has some dependencies:</p>
+
+<ul>
+<li>python2-pillow ( on arch )</li>
+<li>feh</li>
+<li>you need to use urxvt or xterm for it to work</li>
+</ul>
+
+<p>if you need a pair of colors predefined, just specify them on your .Xresources
+i.e background and foreground</p>
+
+<p>also you need to uninstall any other wallpaper manager as it will override this one at startup</p>
+
+<h3>
+<a id="credit" class="anchor" href="#credit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credit</h3>
+
+<p>i couldn't find credit on the colorscript that i got namely "wp" &amp; "./py/*" so if anybody happens to know who was the original author of this program "wp" &amp; "./py/*" please let me know.</p>
+
+<h3>
+<a id="instalation" class="anchor" href="#instalation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalation</h3>
+
+<p>do the following</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone http://github.com/deviantfero/wpgtk
+$ <span class="pl-c1">cd</span> <span class="pl-k">~</span>/wpgtk
+$ sh ./install.sh</pre></div>
+
+<p>now to actually run the program just</p>
+
+<div class="highlight highlight-source-shell"><pre>$ wpg</pre></div>
+
+<p>this will take care of placing the files where they are meant to be in /usr/local/bin/</p>
+
+<h3>
+<a id="loading-at-startup" class="anchor" href="#loading-at-startup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading at Startup</h3>
+
+<p>to load your new wallpaper at startup along with the colors add the following to your startup script or simply add it into your startup apps in your DE of choice</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">~</span>/.wallpapers/wp_init.sh</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/deviantfero">deviantfero</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
