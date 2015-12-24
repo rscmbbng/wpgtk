@@ -1,63 +1,44 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
+    <meta name="description" content="Wpgtk : ">
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Wpgtk by deviantfero</title>
+    <title>Wpgtk</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/deviantfero/wpgtk">View on GitHub</a>
-    <div class="shell">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Wpgtk</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/deviantfero/wpgtk">View on GitHub</a>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/deviantfero/wpgtk/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/deviantfero/wpgtk/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+          <h1 id="project_title">Wpgtk</h1>
+          <h2 id="project_tagline"></h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/deviantfero/wpgtk/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/deviantfero/wpgtk/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
 <a id="wpg" class="anchor" href="#wpg" aria-hidden="true"><span class="octicon octicon-link"></span></a>wpg</h1>
 
-<p>wpg is a little programm to manage your wallpapers in a simple way, it integrates a script wich takes the colors in the image of your preference and sets up an .Xresources file to match your term colors with your wallpaper</p>
+<p>wpg is a GUI for a little program called wp ( original source below ) to manage your wallpapers in a simple way, it integrates a script wich takes the colors in the image of your preference and sets up an .Xresources file to match your term colors with your wallpaper</p>
 
 <p>it can take a little while to generate the color pallete though, be warned</p>
 
-<ul>
-<li>Simple wallpaper management
-<img src="http://imgur.com/HXIm9v4" alt="window">
-</li>
-</ul>
+<p><a href="http://imgur.com/HXIm9v4">Example Image</a></p>
 
 <h3>
 <a id="version" class="anchor" href="#version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version</h3>
@@ -83,7 +64,10 @@ i.e background and foreground</p>
 <h3>
 <a id="credit" class="anchor" href="#credit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credit</h3>
 
-<p>i couldn't find credit on the colorscript that i got namely "wp" &amp; "./py/*" so if anybody happens to know who was the original author of this program "wp" &amp; "./py/*" please let me know.</p>
+<p>I found the script by other means, but i found out the author of the color script that i made
+the GUI for, i'll leave the link to the original repo down below </p>
+
+<p>it's <a href="http://github.com/everett1992/wp">http://github.com/everett1992/wp</a></p>
 
 <h3>
 <a id="instalation" class="anchor" href="#instalation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalation</h3>
@@ -107,21 +91,17 @@ $ sh ./install.sh</pre></div>
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-k">~</span>/.wallpapers/wp_init.sh</pre></div>
       </section>
+    </div>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/deviantfero">deviantfero</a> can be found on <a href="https://github.com/deviantfero/wpgtk">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Wpgtk maintained by <a href="https://github.com/deviantfero">deviantfero</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
-
     </div>
 
     
+
   </body>
 </html>
