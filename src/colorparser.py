@@ -30,6 +30,23 @@ def read_color_in_line( xres_file ):
     color = color.strip( '\n' )
     return color
 
+def read_color_0( xres_file ):
+    xres_file = "." + xres_file + ".Xres"
+    try:
+        f = open( walldir + xres_file, "r" )
+    except IOError as err:
+        print( err )
+        print( err.args )
+        print( err.filename )
+        return "121212"
+    xres_list = [ line for line in f ]
+    color = xres_list[ 0 ]
+    color = color.split( " ", len( color ) )
+    color = color[1]
+    color = color.strip( '#' )
+    color = color.strip( '\n' )
+    return color
+
 def reduce_brightness( hex_string, reduce_lvl ):
     rgb = list( int(hex_string[i:i+2], 16) for i in ( 0, 2, 4 ) )
     hsl = rgb_to_hls( rgb[0], rgb[1], rgb[2] )
@@ -129,16 +146,26 @@ def change_colors_tint2( active, inactive ):
                 print( line.replace( "2C4448".lower(), inactive ), end='' )
         call( [ "killall", "-SIGUSR1", "tint2" ] )
 
-def change_colors_gtk2( active, inactive ):
+def change_colors_gtk2( active, inactive, base_0, base_1 ):
     backupdir = homedir + "/.themes/FlatColor/gtk-2.0/gtkrc.base"
     realdir = homedir + "/.themes/FlatColor/gtk-2.0/gtkrc"
+    base_0_darker = reduce_brightness( base_0, 5 )
     if( isfile( backupdir ) ):
         call( ["cp", backupdir, realdir] )
         with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
             for line in file:
                 print( line.replace( "4A838F", active ), end='' )
+        with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
+            for line in file:
+                print( line.replace( "121212", base_0 ), end='' )
+        with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
+            for line in file:
+                print( line.replace( "202020", base_1 ), end='' )
+        with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
+            for line in file:
+                print( line.replace( "090909", base_0_darker ), end='' )
 
-def change_colors_gtk3( active, inactive ):
+def change_colors_gtk3( active, inactive, base_0, base_1 ):
     backupdir = homedir + "/.themes/FlatColor/gtk-3.0/gtk.css.base"
     realdir = homedir + "/.themes/FlatColor/gtk-3.0/gtk.css"
     if( isfile( backupdir ) ):
@@ -146,9 +173,17 @@ def change_colors_gtk3( active, inactive ):
         with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
             for line in file:
                 print( line.replace( "4A838F".lower(), active ), end='' )
+        with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
+            for line in file:
+                print( line.replace( "121212", base_0 ), end='' )
+        with fileinput.FileInput( realdir, inplace=True, backup=False ) as file:
+            for line in file:
+                print( line.replace( "202020", base_1 ), end='' )
 
 def execute_gcolorchange( image_name ):
     base_color = read_color_in_line( image_name )
+    base_color_0 = read_color_0( image_name )
+    base_color_1 = add_brightness( base_color_0, 10 )
     if( base_color == "4A838F" ):
         base_redux = 0
         inact_redux = 50
@@ -167,8 +202,8 @@ def execute_gcolorchange( image_name ):
     print( "CHANGING::TINT2" )
     change_colors_tint2( active, inactive )
     print( "CHANGING::GTK" )
-    change_colors_gtk2( active, inactive )
-    change_colors_gtk3( active, inactive )
+    change_colors_gtk2( active, inactive, base_color_0, base_color_1 )
+    change_colors_gtk3( active, inactive, base_color_0, base_color_1 )
     print( "CHANGING::ICONS" )
     change_colors_icons( fg_icon, bg_icon, glyph )
     print( "SUCCESS" )
